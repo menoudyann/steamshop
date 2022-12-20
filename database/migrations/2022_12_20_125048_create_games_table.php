@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('name');
             $table->string('image_url');
             $table->string('description');
-            $table->string('price');
-            $table->string('date_release');
+            $table->double('price');
+            $table->dateTime('date_release');
             $table->timestamps();
         });
     }

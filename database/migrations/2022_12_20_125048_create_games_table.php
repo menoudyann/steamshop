@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('image_url');
             $table->string('description');
             $table->double('price');
-            $table->dateTime('date_release');
+            $table->dateTime('released_at');
             $table->timestamps();
         });
     }

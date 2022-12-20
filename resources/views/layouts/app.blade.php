@@ -18,13 +18,15 @@
     <link rel="stylesheet" href="{{asset('css/templatemo-cyborg-gaming.css')}}">
     <link rel="stylesheet" href="{{asset('css/owl.css')}}">
     <link rel="stylesheet" href="{{asset('css/animate.css')}}">
-    <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
 
 </head>
 
 <body>
     <div class="container">
-        @yield('content')
+        <div class="page-content">
+            @yield('content')
+        </div>
     </div>
 </body>
 

@@ -25,7 +25,8 @@ class GameController extends Controller
      */
     public function create()
     {
-        return view('games.create');
+        $games = Game::all();
+        return view('games.create', compact('games'));
     }
 
     /**

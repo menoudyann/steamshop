@@ -32,6 +32,11 @@
                 </ul>
             </div>
         <?php endforeach; ?>
+        @if (count($games) > 0)
+        <div class="main-button">
+            <a href="{{ url('games.create') }}">Add a new games</a>
+        </div>
+        @endif
     </div>
     <div class="col-lg-12">
         <div class="main-button">

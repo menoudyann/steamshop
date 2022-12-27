@@ -25,7 +25,6 @@ class GameController extends Controller
      */
     public function create()
     {
-        //
     }
 
     /**
@@ -36,7 +35,6 @@ class GameController extends Controller
      */
     public function store(Request $request)
     {
-        //
     }
 
     /**

@@ -32,7 +32,6 @@
                 </ul>
             </div>
         <?php endforeach; ?>
-
     </div>
     <div class="col-lg-12">
         <div class="main-button">

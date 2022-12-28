@@ -48,7 +48,7 @@ class GameController extends Controller
      */
     public function show(Game $game)
     {
-        //
+        // code...
     }
 
     /**
@@ -59,7 +59,7 @@ class GameController extends Controller
      */
     public function edit(Game $game)
     {
-        //
+        return view('games.edit', $game);
     }
 
     /**
@@ -71,7 +71,8 @@ class GameController extends Controller
      */
     public function update(Request $request, Game $game)
     {
-        //
+        $game->update($request->all());
+        return redirect()->route('games.index', $game);
     }
 
     /**

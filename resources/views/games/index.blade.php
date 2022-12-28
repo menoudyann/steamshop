@@ -24,7 +24,9 @@
                         <h4><?= $game->price ?> CHF</h4><span>Price</span>
                     </li>
                     <li>
-                        <div class="main-border-button pull-right"><a href="#">Buy</a></div>
+                        <div class="main-button">
+                            <button class="btn btn-success">Buy</button>
+                        </div>
                     </li>
                     <li>
                         @if (count($games) > 0)
@@ -32,7 +34,9 @@
                         <form action="{{ route('games.destroy', $game) }}" method="POST">
                             @method('DELETE')
                             @csrf
-                            <button class="">delete</button>
+                            <div class="main-button">
+                                <button class="btn btn-danger">delete</button>
+                            </div>
                         </form>
                         @endif
                     </li>

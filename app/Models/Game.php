@@ -8,6 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Game extends Model
 {
 
-    protected $fillable = ['name', 'image_url', 'description', 'price', 'date_release'];
-    
+    protected $fillable = ['name', 'description', 'price', 'released_at'];
 }

@@ -15,11 +15,11 @@ return new class extends Migration
     {
         Schema::create('games', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('image_url');
-            $table->string('description');
-            $table->double('price');
-            $table->dateTime('released_at')->default('2020-01-01 10:10:10');
+            $table->string('name')->nullable(true)->default('');
+            $table->string('image_url')->nullable(true)->default('');
+            $table->string('description')->nullable(true)->default('');
+            $table->double('price')->nullable(true)->default(0);
+            $table->string('released_at')->nullable(true);
             $table->timestamps();
         });
     }

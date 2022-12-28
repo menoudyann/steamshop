@@ -25,8 +25,7 @@ class GameController extends Controller
      */
     public function create()
     {
-        $games = Game::all();
-        return view('games.create', compact('games'));
+        return view('games.create');
     }
 
     /**
@@ -38,7 +37,7 @@ class GameController extends Controller
     public function store(Request $request)
     {
         $game = Game::create($request->all());
-        return redirect('games.index');
+        return redirect()->route('games.index');
     }
 
     /**
@@ -83,6 +82,7 @@ class GameController extends Controller
      */
     public function destroy(Game $game)
     {
-        //
+        $game->delete();
+        return redirect()->route('games.index');
     }
 }

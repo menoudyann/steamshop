@@ -15,27 +15,29 @@
                     <li><img src="{{asset('images/game-03.jpg')}}" alt="" class="templatemo-item"></li>
 
                     <li>
-                        <h4><?= $game->name ?></h4><span>Titre</span>
+                        <h4><?= $game->name ?></h4>
                     </li>
                     <li>
-                        <h4><?= $game->released_at ?></h4><span>Date of Release</span>
+                        <h4><?= $game->released_at ?></h4>
                     </li>
                     <li>
-                        <h4><?= $game->price ?> CHF</h4><span>Price</span>
+                        <h4><?= $game->price ?> CHF</h4>
                     </li>
                     <li>
-                        <div class="main-button">
-                            <button class="btn btn-success">Buy</button>
-                        </div>
+                        <form action="{{ route('games.show', $game) }}" method="GET">
+                            @csrf
+                            <div class="main-button">
+                                <button class="btn btn-success">Buy</button>
+                            </div>
+                        </form>
                     </li>
                     <li>
-                        @if (count($games) > 0)
-
+                        @if (Auth::check())
                         <form action="{{ route('games.destroy', $game) }}" method="POST">
                             @method('DELETE')
                             @csrf
                             <div class="main-button">
-                                <button class="btn btn-danger">delete</button>
+                                <button class="btn btn-danger" style="height: 40px; width: 40px"><i class="fa fa-trash"></i></button>
                             </div>
                         </form>
                         @endif
@@ -43,7 +45,7 @@
                 </ul>
             </div>
         <?php endforeach; ?>
-        @if (count($games) > 0)
+        @if (Auth::check())
         <div class="main-button">
             <a href="{{ route('games.create') }}">Add a new game</a>
         </div>

@@ -9,6 +9,7 @@
         <div class="heading-section">
             <h4><em>Add</em> a new Game</h4>
         </div>
+        
         <form method="post" class="form-horizontal" role="form" action="{{ route('games.store') }}">
             @csrf
             <input class="input" type="text" id="name" name="name" placeholder="Name"><br><br>

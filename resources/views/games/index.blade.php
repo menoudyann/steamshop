@@ -5,14 +5,15 @@
         </h2>
     </x-slot>
 
-    <div class="overflow-hidden rounded-lg border border-gray-200 shadow-md mx-10">
+    <div class="overflow-hidden rounded-lg border border-gray-200 shadow-md mx-10 mt-10">
         <table class="w-full border-collapse bg-white text-left text-sm text-gray-500">
             <thead class="bg-gray-50">
                 <tr>
-                    <th scope="col" class="px-6 py-4 font-medium text-gray-900"></th>
+                    <th scope="col" class="px-6 py-4 font-medium text-gray-900">Image</th>
                     <th scope="col" class="px-6 py-4 font-medium text-gray-900">Name</th>
                     <th scope="col" class="px-6 py-4 font-medium text-gray-900">Release at</th>
-                    <th scope="col" class="px-6 py-4 font-medium text-gray-900">price</th>
+                    <th scope="col" class="px-6 py-4 font-medium text-gray-900">Price</th>
+                    <th scope="col" class="px-6 py-4 font-medium text-gray-900">Actions</th>
                 </tr>
             </thead>
             <tbody class="divide-y divide-gray-100 border-t border-gray-100">
@@ -42,13 +43,17 @@
                         </td>
                     </tr>
                 <?php endforeach; ?>
-                @if (Auth::check())
-                <div class="main-button">
-                    <a href="{{ route('games.create') }}">Add a new game</a>
-                </div>
-                @endif
             </tbody>
         </table>
+        <div class="container py-10 px-10 mx-0 min-w-full flex flex-col items-center bg-white">
+            @if (Auth::check())
+            <form action="{{ route('games.create') }}" method="GET">
+                <button class="bg-yellow-500 hover:bg-yellow-400 text-white font-bold py-2 px-4 rounded">
+                    Add a new game
+                </button>
+            </form>
+            @endif
+        </div>
     </div>
     </div>
     </div>

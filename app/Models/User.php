@@ -41,4 +41,15 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    /**
+     * This function returns a collection of games that belong to the user.
+     * 
+     * @return A collection of games that belong to the user.
+     */
+    public function games()
+    {
+        return $this->belongsToMany(Game::class);
+    }
 }

@@ -30,7 +30,7 @@
                         <td class="px-6 py-4">
                             <h4><?= $game->price ?> CHF</h4>
                         </td>
-                        <td class="px-6 py-4" align="right" >
+                        <td class="px-6 py-4" align="right">
                             <form action="{{ route('games.destroy', $game) }}" method="POST">
                                 @method('DELETE')
                                 @csrf
@@ -44,10 +44,5 @@
                 <?php endforeach; ?>
             </tbody>
         </table>
-        <div class="container py-10 px-10 mx-0 min-w-full flex flex-col items-center bg-white">
-            <form action="{{ route('games.create') }}" method="GET">
-                <button type="submit" class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Add a new game</button>
-            </form>
-        </div>
     </div>
 </x-app-layout>

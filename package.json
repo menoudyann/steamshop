@@ -16,6 +16,7 @@
         "vite": "^4.0.0"
     },
     "dependencies": {
+        "flowbite-datepicker": "^1.2.2",
         "powershell": "^2.3.2"
     }
 }

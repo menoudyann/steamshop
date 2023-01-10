@@ -59,9 +59,7 @@
                         <div class="md:flex md:items-center">
                             <div class="md:w-1/3"></div>
                             <div class="md:w-2/3">
-                                <button class="shadow bg-yellow-500 hover:bg-yellow-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="submit">
-                                    Save
-                                </button>
+                                <button type="submit" class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Save</button>
                             </div>
                         </div>
                     </form>

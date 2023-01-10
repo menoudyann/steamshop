@@ -30,7 +30,7 @@
                         <td class="px-6 py-4">
                             <h4><?= $game->price ?> CHF</h4>
                         </td>
-                        <td class="px-6 py-4" align="right" >
+                        <td class="px-6 py-4" align="right">
                             <form action="{{ route('games.destroy', $game) }}" method="POST">
                                 @method('DELETE')
                                 @csrf

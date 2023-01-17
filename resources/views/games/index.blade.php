@@ -19,7 +19,7 @@
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-gray-100 border-t border-gray-100">
-                        <?php foreach ($games as $game) : ?>
+                        @foreach ($games as $game) 
                             <tr class="hover:bg-gray-50">
                                 <td class="px-6 py-4"><img class="rounded-lg" src=" {{asset('images/game-03.jpg')}}" />
                                 </td>
@@ -43,7 +43,7 @@
                                     </form>
                                 </td>
                             </tr>
-                        <?php endforeach; ?>
+                        @endforeach
                     </tbody>
                 </table>
                 <div class="container py-10 px-10 mx-0 min-w-full flex flex-col items-center bg-white">

@@ -17,13 +17,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('auth.register');
-});
+Route::get('/', [GameController::class, 'index'])->name('games');
 
-//Route::get('/', 'HomeController@index');
-
-
+Route::resource('/games', GameController::class)->only(['index', 'show']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home');
@@ -31,7 +27,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::resource('/library', LibraryController::class);
-    Route::resource('/games', GameController::class);
+    Route::resource('/games', GameController::class)->only(['create', 'store', 'edit', 'update', 'destroy']);
 });
 
 require __DIR__ . '/auth.php';

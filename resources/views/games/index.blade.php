@@ -46,11 +46,13 @@
                         @endforeach
                     </tbody>
                 </table>
+                @if (Auth::check())
                 <div class="container py-10 px-10 mx-0 min-w-full flex flex-col items-center bg-white">
                     <form action="{{ route('games.create') }}" method="GET">
                         <button type="submit" class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Add a new game</button>
                     </form>
                 </div>
+                @endif
             </div>
         </div>
     </div>

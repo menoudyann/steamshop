@@ -16,6 +16,7 @@ class LibraryController extends Controller
     public function index()
     {
         $user = Auth::user();
-        return view('games.library', ['games' => $user->games]);
+        $games = $user->games;
+        return view('games.library', compact('games'));
     }
 }

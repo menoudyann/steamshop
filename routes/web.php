@@ -19,15 +19,20 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [GameController::class, 'index'])->name('games');
 
-Route::resource('/games', GameController::class)->only(['index', 'show']);
+Route::resource('/games', GameController::class)->only(['index', 'show', 'create']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home');
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    Route::resource('/library', LibraryController::class);
+    Route::resource('/library', LibraryController::class)->only('index');
+    Route::post('/games/buy', [GameController::class, 'buy'])->name('games.buy');
     Route::resource('/games', GameController::class)->only(['create', 'store', 'edit', 'update', 'destroy']);
+    Route::get('/updateBalance', function () {
+        return view('profile.addBalance');
+    })->name('updateBalance');
+    Route::post('profile/addBalance', [ProfileController::class, 'addBalance'])->name('profile.addBalance');
 });
 
 require __DIR__ . '/auth.php';

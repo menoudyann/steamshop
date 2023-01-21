@@ -62,7 +62,8 @@ class ProfileController extends Controller
     public function addBalance(Request $request)
     {
         $user = User::find(Auth::user()->id);
-        $user->balance = $request->input('balance');
+        $user->balance = $user->balance + $request->input('balance');
         $user->save();
+        return redirect()->route('home');
     }
 }

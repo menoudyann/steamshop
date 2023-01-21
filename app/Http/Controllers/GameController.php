@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Game;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 
 class GameController extends Controller
 {
@@ -84,6 +86,19 @@ class GameController extends Controller
     public function destroy(Game $game)
     {
         $game->delete();
+        return redirect()->route('games.index');
+    }
+
+    /**
+     * Buy a game
+     *
+     * @param  \App\Models\Game  $game
+     * @return \Illuminate\Http\Response
+     */
+    public function buy(Game $game)
+    {
+        $user = User::find(Auth::user()->id);
+        $user->games()->attach($game->id);
         return redirect()->route('games.index');
     }
 }

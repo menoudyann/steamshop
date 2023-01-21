@@ -1,5 +1,5 @@
-<nav class="px-2 bg-white">
-    <div class="container flex flex-wrap items-center justify-between mx-10">
+<nav class=" bg-white">
+    <div class="container flex flex-wrap items-center justify-between max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
         <a href="/home" class="flex items-center">
             <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Steam_2016_logo_black.svg" class="h-6 mr-3 sm:h-10" alt="Flowbite Logo" />
         </a>

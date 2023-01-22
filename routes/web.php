@@ -26,8 +26,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    Route::resource('/library', LibraryController::class)->only('index');
-    Route::post('/games/buy', [GameController::class, 'buy'])->name('games.buy');
+    Route::post('/library/store', [LibraryController::class, 'store'])->name('library.store');
+    Route::resource('/library', LibraryController::class)->except('update', 'edit', 'destroy');
     Route::resource('/games', GameController::class)->only(['create', 'store', 'edit', 'update', 'destroy']);
     Route::get('/updateBalance', function () {
         return view('profile.addBalance');

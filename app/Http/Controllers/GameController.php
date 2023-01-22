@@ -88,17 +88,4 @@ class GameController extends Controller
         $game->delete();
         return redirect()->route('games.index');
     }
-
-    /**
-     * Buy a game
-     *
-     * @param  \App\Models\Game  $game
-     * @return \Illuminate\Http\Response
-     */
-    public function buy(Game $game)
-    {
-        $user = User::find(Auth::user()->id);
-        $user->games()->attach($game->id);
-        return redirect()->route('games.index');
-    }
 }
